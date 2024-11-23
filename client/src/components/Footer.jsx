@@ -1,6 +1,10 @@
-const Footer = () => {
+const Footer = ({ role }) => {
+  const blue = "#1f89db";
+  const red = "#f05258";
+  const bgColor = role === "admin" ? red : blue;
+
   return (
-    <footer className="h-[200px] w-full bg-[#1f89db] flex flex-col">
+    <footer className={`h-[200px] w-full bg-[${bgColor}] flex flex-col`}>
       <div className="flex flex-row items-center pt-8 pl-4">
         <div className="w-1/6 items-center pl-4">
           <h2 className="text-[30px] font-extrabold pt-2 text-black pl-8">

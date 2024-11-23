@@ -1,19 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from "./App";
-import PrinterCard from "./components/PriterCard";
+import PrinterGrid from "./components/PrinterGrid";
+import LoginForm from "./components/LoginForm";
+import Home from "./components/Home";
 
 const AppRouter = () => {
-  const printer = {
-    name: "HP",
-    price: 200,
-    image: "printer.jpg",
-  };
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<App />}>
-          <Route path="/printers" element={<PrinterCard printer={printer} />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/printers" element={<PrinterGrid />} />
+          <Route path="/login" element={<LoginForm />} />
         </Route>
       </Routes>
     </Router>

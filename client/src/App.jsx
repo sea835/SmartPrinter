@@ -1,19 +1,20 @@
-import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
-import PrinterForm from "./components/PrinterForm";
 
 function App() {
+  const userRole = "user"; // This should be dynamically set based on the logged-in user
+  const bgColor =
+    userRole === "admin" ? "from-white to-red-300" : "from-white to-blue-300";
+
   return (
     <>
       <div className="container w-[1400px] mx-auto items-center text-[15px]">
-        <Header />
-        <main className="h-[700px] bg-gradient-to-b from-white to-blue-300">
-          {/* <Outlet /> */}
-          <PrinterForm />
+        <Header role={userRole} />
+        <main className={`h-[700px] bg-gradient-to-b ${bgColor}`}>
+          <Outlet />
         </main>
-        <Footer />
+        <Footer role={userRole} />
       </div>
     </>
   );
