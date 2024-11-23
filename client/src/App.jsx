@@ -2,8 +2,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Outlet } from "react-router-dom";
 
-function App() {
-  const userRole = "user"; // This should be dynamically set based on the logged-in user
+function App({ role }) {
+  const userRole = role; // This should be dynamically set based on the logged-in user
   const bgColor =
     userRole === "admin" ? "from-white to-red-300" : "from-white to-blue-300";
 

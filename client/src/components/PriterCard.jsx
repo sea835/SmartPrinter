@@ -1,3 +1,5 @@
+import React from "react";
+import { Link } from "react-router-dom";
 const PrinterCard = ({ printer }) => {
   return (
     <div className="w-[300px] h-[320px] bg-white border-gray-300 border-2 rounded-xl flex flex-col items-center">
@@ -8,9 +10,12 @@ const PrinterCard = ({ printer }) => {
         className="w-[300px] h-[200px] object-cover"
       />
       <div className="flex justify-between items-center w-5/6 pt-4">
-        <button className="bg-[#f05258] text-white px-4 py-1 rounded-full w-[120px]">
-          Select
-        </button>
+        <Link
+          to={`/printer/${printer.id}`}
+          className="bg-[#f05258] text-white px-4 py-1 rounded-full w-[120px]"
+        >
+          Select printer
+        </Link>
         <button className="bg-[#1f89db] text-white px-4 py-1 rounded-full w-[120px]">
           Information
         </button>

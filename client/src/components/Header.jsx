@@ -17,12 +17,28 @@ const Header = ({ role }) => {
         <li>
           <Link to="/home">Home</Link>
         </li>
-        <li>
-          <Link to="/printers">View Printers</Link>
-        </li>
-        <li>
-          <Link to="/pages">Buy Pages</Link>
-        </li>
+        {role === "admin" ? (
+          <>
+            <li>
+              <Link to="/printers">Manage Printers</Link>
+            </li>
+            <li>
+              <Link to="/configuration">Configuration</Link>
+            </li>
+            <li>
+              <Link to="/report">Report</Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to="/printers">View Printers</Link>
+            </li>
+            <li>
+              <Link to="/pages">Buy Pages</Link>
+            </li>
+          </>
+        )}
       </ul>
 
       <div className="flex justify-end gap-16 items-center">

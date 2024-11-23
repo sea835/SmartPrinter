@@ -681,6 +681,10 @@ video {
   height: 700px;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -1001,6 +1005,10 @@ video {
 
 .text-\[35px\] {
   font-size: 35px;
+}
+
+.text-\[50px\] {
+  font-size: 50px;
 }
 
 .font-bold {
