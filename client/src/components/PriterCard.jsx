@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const PrinterCard = ({ printer }) => {
+const PrinterCard = ({ printer, userRole }) => {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isEnabled, setIsEnabled] = useState(true);
@@ -47,36 +47,40 @@ const PrinterCard = ({ printer }) => {
             <p className="mb-4">
               A high-quality laser printer suitable for office use.
             </p>
-            <div className="flex justify-between items-center mt-4">
-              <button
-                className="bg-[#1f89db] text-white px-4 py-1 rounded-full"
-                onClick={handleEditModalOpen}
-              >
-                Edit
-              </button>
-              <button className="bg-[#f05258] text-white px-4 py-1 rounded-full">
-                Delete
-              </button>
-              <label className="flex items-center cursor-pointer">
-                <div className="relative">
-                  <input
-                    type="checkbox"
-                    className="sr-only"
-                    checked={isEnabled}
-                    onChange={handleToggle}
-                  />
-                  <div className="block bg-gray-600 w-14 h-8 rounded-full"></div>
-                  <div
-                    className={`dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition ${
-                      isEnabled ? "transform translate-x-full bg-green-500" : ""
-                    }`}
-                  ></div>
-                </div>
-                <div className="ml-3 text-gray-700 font-medium">
-                  {isEnabled ? "Enabled" : "Disabled"}
-                </div>
-              </label>
-            </div>
+            {userRole === "admin" && (
+              <div className="flex justify-between items-center mt-4">
+                <button
+                  className="bg-[#1f89db] text-white px-4 py-1 rounded-full"
+                  onClick={handleEditModalOpen}
+                >
+                  Edit
+                </button>
+                <button className="bg-[#f05258] text-white px-4 py-1 rounded-full">
+                  Delete
+                </button>
+                <label className="flex items-center cursor-pointer">
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      className="sr-only"
+                      checked={isEnabled}
+                      onChange={handleToggle}
+                    />
+                    <div className="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                    <div
+                      className={`dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition ${
+                        isEnabled
+                          ? "transform translate-x-full bg-green-500"
+                          : ""
+                      }`}
+                    ></div>
+                  </div>
+                  <div className="ml-3 text-gray-700 font-medium">
+                    {isEnabled ? "Enabled" : "Disabled"}
+                  </div>
+                </label>
+              </div>
+            )}
           </div>
         </div>
       )}

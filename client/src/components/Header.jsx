@@ -15,7 +15,7 @@ const Header = ({ role }) => {
       </h1>
       <ul className="flex flex-row gap-16 items-center w-9/12">
         <li>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </li>
         {role === "admin" ? (
           <>

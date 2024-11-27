@@ -10,6 +10,7 @@ const PrinterForm = () => {
   const [pageSize, setPageSize] = useState("A4");
   const [pageRange, setPageRange] = useState("All");
   const [printSides, setPrintSides] = useState("one");
+  const [remainingPaper, setRemainingPaper] = useState(100); // Example remaining paper
 
   return (
     <form className="bg-gray-200 p-8 rounded shadow-lg w-3/4 mx-auto mt-6">
@@ -159,6 +160,16 @@ const PrinterForm = () => {
               Print on both sides
             </label>
           </div>
+        </div>
+
+        <div className="mb-4 flex items-center">
+          <Link
+            to="/buy-paper"
+            className="px-4 py-2 bg-green-500 text-white rounded"
+          >
+            Buy Paper
+          </Link>
+          <span className="ml-4">Remaining paper: {remainingPaper}</span>
         </div>
       </div>
 

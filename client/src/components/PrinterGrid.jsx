@@ -34,7 +34,7 @@ const PrinterGrid = ({ role }) => {
       )}
       <div className="grid grid-cols-4 gap-2">
         {printers.map((printer, index) => (
-          <PrinterCard key={index} printer={printer} />
+          <PrinterCard key={index} printer={printer} userRole={role} />
         ))}
       </div>
     </div>

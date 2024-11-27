@@ -7,6 +7,9 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import PrinterForm from "./components/PrinterForm";
 import AddPrinterForm from "./components/AddPrinterForm";
+import ConfigPage from "./components/ConfigPage";
+import ReportPage from "./components/ReportPage";
+import BuyPage from "./components/BuyPage";
 
 const AppRouter = () => {
   const userRole = "admin"; // This should be dynamically set based on the logged-in user
@@ -15,11 +18,15 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route exact path="/" element={<App role={userRole} />}>
-          <Route path="/home" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/printers" element={<PrinterGrid role={userRole} />} />
           <Route path="/printer/:id" element={<PrinterForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/add-printer" element={<AddPrinterForm />} />
+          <Route path="/configuration" element={<ConfigPage />} />
+          <Route path="/report" element={<ReportPage />} />
+          <Route path="/pages" element={<BuyPage />} />
+          <Route path="/buy-paper" element={<BuyPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -11,7 +11,7 @@ function App({ role }) {
     <>
       <div className="container w-[1400px] mx-auto items-center text-[15px]">
         <Header role={userRole} />
-        <main className={`h-[700px] bg-gradient-to-b ${bgColor}`}>
+        <main className={`h-[750px] bg-gradient-to-b ${bgColor}`}>
           <Outlet />
         </main>
         <Footer role={userRole} />
