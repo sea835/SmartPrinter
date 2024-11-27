@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const PrinterForm = () => {
   const [file, setFile] = useState(null);
@@ -163,9 +164,9 @@ const PrinterForm = () => {
 
       {/* Buttons */}
       <div className="flex justify-between mt-6">
-        <button type="button" className="px-4 py-2 bg-gray-300 rounded">
+        <Link to="/printers" className="px-4 py-2 bg-gray-300 rounded">
           Cancel
-        </button>
+        </Link>
         <button
           type="submit"
           className="px-4 py-2 bg-blue-500 text-white rounded"
