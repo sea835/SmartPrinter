@@ -23,7 +23,7 @@ const BuyPage = () => {
 
   return (
     <div className="pt-16">
-      <form className="bg-gray-200 p-8 rounded shadow-lg w-3/4 mx-auto mt-6">
+      <form className="bg-gray-200 p-8 rounded shadow-lg w-3/4 h-5/6 mx-auto mt-6">
         <h2 className="text-lg font-semibold mb-4 text-center">Buy Paper</h2>
 
         <div className="mb-4">
